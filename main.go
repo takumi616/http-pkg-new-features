@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-type Message struct {
+type message struct {
 	Content string `json:"content"`
 }
 
@@ -16,7 +16,7 @@ func getMessage(w http.ResponseWriter, r *http.Request) {
 	//Get path value
 	id := r.PathValue("id")
 
-	msg := &Message{
+	msg := &message{
 		Content: fmt.Sprintf("Test PathValue method and new way of routing definition. Got id is: %s", id),
 	}
 
